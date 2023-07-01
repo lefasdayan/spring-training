@@ -32,8 +32,8 @@ public class GreetingController {
     }
 
     @PostMapping
-    public String add(@RequestParam String name, @RequestParam double course_to_rubble, Map<String, Object> model){
-        Currency currency = new Currency(name, course_to_rubble);
+    public String add(@RequestParam String name, @RequestParam double course, Map<String, Object> model){
+        Currency currency = new Currency(name, course);
         currencyRepo.save(currency);
 
         Iterable<Currency> currencies = currencyRepo.findAll();
