@@ -3,10 +3,25 @@
     <title>SpringTraining: Main</title>
 </head>
 <body>
+<form action="/logout" method="post">
+    <input type="submit" value="Sign Out"/>
+
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form>
+
 <form method="post">
     <input type="text" name="name" placeholder="Название валюты"/>
     <input type="number" step="0.01" name="course" placeholder="Курс к рублю"/>
     <button type="submit">Отправить в БД</button>
+
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form>
+
+<form method="post" action="filter">
+    <input type="text" name="filter" placeholder="Найти валюту по имени">
+    <button type="submit">Найти</button>
+
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
 </form>
 
 <div>Список валют:</div>
